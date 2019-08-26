@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="col-md-6 mx-auto">
+    <div class="card rounded-0">
+      <div class="card-header">
+
+        <h3 class="mb-0">Login</h3>
+        <img width="" height="120" alt="wari" src="assets/img/wari.png">
+      </div>
+      <div class="card-body">
+        <form class="form">
+          <div class="form-group">
+            <label for="">Nom d'utilisateur</label>
+            <input [(ngModel)]="loginUserData.username" name="username" type="text" class="form-control rounded-0" required>
+          </div>
+          <div class="form-group">
+              <label for="">Mot de  Passe</label>
+             
+              <input [(ngModel)]="loginUserData.password" name="password" type="password" class="form-control rounded-0" required>
+
+            </div>
+
+        <button (click)="loginUser()" type="button" class="btn btn-success float-right" >Connexion</button>
+     
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

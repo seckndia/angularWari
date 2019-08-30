@@ -1,0 +1,75 @@
+
+
+<div class="row">
+  <div class="col-md-6 mx-auto">
+    <div class="card rounded-0">
+      <div class="card-header">
+
+    <h3 class="mb-0">Ajout utilisateur</h3>
+      </div>
+      <div class="card-body">
+        <form class="form">
+            <div class="row form-group">
+              <div class="col">
+                  <label for="">Username</label>
+                <input type="text" class="form-control" placeholder="First name" name="username">
+              </div>
+              <div class="col ">
+                  <label for="">Password</label>
+                <input type="password" class="form-control" placeholder="Mot de pass" name="password">
+              </div>
+            </div>
+
+            <div class="row form-group">
+                <div class="col">
+                    <label for="">Nom </label>
+                  <input type="text" class="form-control" placeholder="Last name" name="nom">
+                </div>
+                <div class="col ">
+                    <label for="">Adresse</label>
+                  <input type="text" class="form-control" placeholder="adresse" name="adresse">
+                </div>
+              </div>
+            <div class="row form-group">
+                <div class="col">
+                    <label for="">Tel</label>
+                  <input type="number" class="form-control" placeholder="Numberphone">
+                </div>
+                <div class="col ">
+                    <label for="">Cni</label>
+                  <input type="text" class="form-control" placeholder="N° carte d'identité">
+                </div>
+              </div>
+              <div class="row form-group">
+                <div class="col">
+                    <label for="">Profil</label>
+                    <select id="inputState" class="form-control" name="profil">
+                      <option selected></option>
+                      <option value="1">SUPERADMIN</option>
+                      <option value="2">CAISSIER</option>
+                    </select> 
+                    </div>
+                <div class="col ">
+                    <label for="">Status</label>
+      
+                    <select id="inputState" class="form-control" name="status">
+                      <option selected></option>
+                      <option>Active</option>
+                      <option>Bloquer</option>
+                    </select>       
+             </div>
+              </div>
+              <div class="row form-group">
+                <div class="col">
+              <img style="width: 250px;height:200px" alt="">
+              <input type="file" class="form-control" #Image accept="image/*">
+                </div>
+              </div>
+
+        <button  type="button" class="btn btn-primary float-right" >Ajouter</button>
+     
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -14,7 +14,5 @@ export class AdminComponent implements OnInit {
   ngOnInit() {
    
   }
-  firstClick() {
-    this.data.firstClick();
-  }
+ 
 }

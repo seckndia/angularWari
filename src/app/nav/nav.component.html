@@ -1,12 +1,57 @@
 <header>
-  <div class="container">
-    <a routerLink="/" class="logo">Wari</a>
-
-    <nav>
-      <ul class="">
-        <li><a  routerLink="/" routerLink>Login</a></li>
-        <li><a   routerLink="admin">Admin</a></li>
+    <nav class="navbar navbar-expand-lg navbar-light bg-success border-bottom">
+        <img src="assets/img/logo-wari2.jpg" width="5%" alt="">
+        
+   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+   </button>
+        
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav " id="left">
+          <li class="nav-item">
+          <a class="nav-link"   style="color: aliceblue" routerLink="/admin" routerLinkActive="active">Acceuil </a>
+        </li>
+          <li class="nav-item">
+            <a class="nav-link" style="color: aliceblue"routerLink="#" routerLinkActive="active">Affectation de Comptes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="color: aliceblue"routerLink="#" routerLinkActive="active">Liste des Partenaire</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" style="color: aliceblue"routerLink="#" routerLinkActive="active"> Depots</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" style="color: aliceblue" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Gestion d'Ajouts
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" routerLink="register">SuperAdmin et User</a>
+                <a class="dropdown-item" href="#">Partenaire</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Utilisateur</a>
+                <a class="dropdown-item" href="#">Comptes</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" style="color: aliceblue" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Transactions
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Envoie</a>
+                <a class="dropdown-item" href="#">Retrait</a>
+              </div>
+            </li>
       </ul>
-    </nav>
+   
+      <ul class="navbar-nav ml-auto mt-2 mt-lg-0 pull-right">
+        <li class="nav-item">
+          <a class="nav-link"  style="color: aliceblue" *ngIf="!_authService.loggedIn()" routerLink="/" routerLinkActive="active">Connexion</a>
+     
+          <a class="nav-link" style="cursor: pointer" *ngIf="_authService.loggedIn()" (click)="_authService.logoutUser()">Déconnexion</a>
+        </li>
+      </ul>
+     
   </div>
+          
+  </nav>
 </header>

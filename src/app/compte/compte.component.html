@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col-md-6 mx-auto">
+    <div class="card rounded-0">
+      <div class="card-header">
+
+    <h3 class="mb-0">Ajout Compte au Partenaire</h3>
+      </div>
+      <div class="card-body">
+        <form class="form" #imageForm=ngForm (ngSubmit)="OnSubmit(partenaire)" >
+            <div class="row form-group">
+              <div class="col ">
+                  <label for="">Partenaire</label>
+                <input type="text" #partenaire class="form-control" ngModel placeholder="Id du partenaire" name="partenaire">
+              </div>
+            </div>
+              <button type="submit" class="btn btn-primary float-right" >Ajouter</button>
+            
+         
+            </form>
+          
+      </div>
+    </div>
+  </div>

@@ -21,6 +21,8 @@ import { UtilisateurComponent } from './utilisateur/utilisateur.component';
 import { UtilisateurService } from './utilisateur.service';
 import { PartenaireComponent } from './partenaire/partenaire.component';
 import { PartenaireService } from   './partenaire.service';
+import { CompteComponent } from './compte/compte.component';
+import { CompteService } from './compte.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +36,9 @@ import { PartenaireService } from   './partenaire.service';
    
     UtilisateurComponent,
    
-    PartenaireComponent
+    PartenaireComponent,
+   
+    CompteComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +47,7 @@ import { PartenaireService } from   './partenaire.service';
     ReactiveFormsModule,
     HttpClientModule,
   ],
-  providers: [AuthentificationService, AuthGuard,SupAdUserService, PartenaireService, UtilisateurService, PartService,{
+  providers: [AuthentificationService, AuthGuard,SupAdUserService,CompteService, PartenaireService, UtilisateurService, PartService,{
     provide: HTTP_INTERCEPTORS,
     useClass: TokenInterceptorService,
     multi: true

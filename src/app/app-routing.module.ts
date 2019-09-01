@@ -5,6 +5,9 @@ import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './admin/admin.component';
 import { AuthGuard } from './auth.guard';
 import { SuperAdminUserComponent } from './super-admin-user/super-admin-user.component';
+import { ListpartComponent } from './listpart/listpart.component';
+import { UtilisateurComponent } from './utilisateur/utilisateur.component';
+import { PartenaireComponent } from './partenaire/partenaire.component';
 
 
 const routes: Routes = [ 
@@ -14,10 +17,13 @@ const routes: Routes = [
 { path: 'admin',
 canActivate: [AuthGuard],
  component: AdminComponent,
- 
 
  },
  { path: 'register', component: SuperAdminUserComponent },
+ { path: 'listpart', component: ListpartComponent },
+ { path: 'users', component: UtilisateurComponent },
+ { path: 'partenaire', component: PartenaireComponent },
+
 
 ];
 

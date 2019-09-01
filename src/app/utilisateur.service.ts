@@ -1,13 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
 @Injectable({
   providedIn: 'root'
 })
-export class SupAdUserService {
+export class UtilisateurService {
 
   constructor(private http : HttpClient) { }
-  postFile(
+  userFile(
    
     username:string,
     password:string,
@@ -17,7 +16,7 @@ export class SupAdUserService {
     cni:string,
     profil:string,
     fileToUpload: File){
-    const endpoint = 'http://127.0.0.1:8000/api/register';
+    const endpoint = ' http://127.0.0.1:8000/api/ajoutpartuser';
     const formData: FormData = new FormData()
     formData.append('username', username)
     formData.append('password', password)

@@ -49,6 +49,7 @@ export class LoginComponent implements OnInit {
        console.log(localStorage);
        this._router.navigate(['admin']) 
      }, 
+     
     err => console.log(err)
    )
    }

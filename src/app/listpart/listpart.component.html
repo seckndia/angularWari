@@ -1,0 +1,27 @@
+<div class="table-responsive">
+<table class="table table-dark">
+    <caption></caption>
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">Nom de l'Entreprise</th>
+      <th scope="col">Adresse</th>
+      <th scope="col">Tel</th>
+      <th scope="col">Status</th>
+      <th scope="col">Ninea</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let partenaire of partenaires">
+          <td>{{ partenaire.id }}</td>
+          <td>{{partenaire. entreprise}}</td>
+          <td>{{partenaire.adresse }}</td>
+          <td>{{partenaire.tel }}</td>
+          <td>{{partenaire.status }}</td>
+          <td>{{partenaire.ninea }}</td>
+        
+        </tr>
+       
+      </tbody>
+    </table>
+  </div>

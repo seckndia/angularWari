@@ -15,7 +15,12 @@ import { AuthGuard } from './auth.guard';
 import { TokenInterceptorService } from './token-interceptor.service';
 import { SuperAdminUserComponent } from './super-admin-user/super-admin-user.component';
 import { from } from 'rxjs';
-
+import { SupAdUserService } from './sup-ad-user.service';
+import { ListpartComponent } from './listpart/listpart.component';
+import { UtilisateurComponent } from './utilisateur/utilisateur.component';
+import { UtilisateurService } from './utilisateur.service';
+import { PartenaireComponent } from './partenaire/partenaire.component';
+import { PartenaireService } from   './partenaire.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +28,13 @@ import { from } from 'rxjs';
     AdminComponent,
     LoginComponent,
    
-    SuperAdminUserComponent
+    SuperAdminUserComponent,
+   
+    ListpartComponent,
+   
+    UtilisateurComponent,
+   
+    PartenaireComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +43,7 @@ import { from } from 'rxjs';
     ReactiveFormsModule,
     HttpClientModule,
   ],
-  providers: [AuthentificationService, AuthGuard, PartService,{
+  providers: [AuthentificationService, AuthGuard,SupAdUserService, PartenaireService, UtilisateurService, PartService,{
     provide: HTTP_INTERCEPTORS,
     useClass: TokenInterceptorService,
     multi: true

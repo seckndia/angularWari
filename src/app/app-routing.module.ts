@@ -10,6 +10,8 @@ import { UtilisateurComponent } from './utilisateur/utilisateur.component';
 import { PartenaireComponent } from './partenaire/partenaire.component';
 import { CompteComponent } from './compte/compte.component';
 import { AfectcomptComponent } from './afectcompt/afectcompt.component';
+import { ListuserallComponent } from './listuserall/listuserall.component';
+import { ListuserComponent } from './listuser/listuser.component';
 
 
 const routes: Routes = [ 
@@ -27,6 +29,9 @@ canActivate: [AuthGuard],
  { path: 'partenaire', component: PartenaireComponent },
  { path: 'compte', component: CompteComponent },
  { path: 'afectcompt', component: AfectcomptComponent  },
+ { path: 'listuserAll', component: ListuserallComponent  },
+ { path: 'listuser', component: ListuserComponent  },
+ 
 
 
 ];

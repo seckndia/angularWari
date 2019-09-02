@@ -23,6 +23,7 @@ import { PartenaireComponent } from './partenaire/partenaire.component';
 import { PartenaireService } from   './partenaire.service';
 import { CompteComponent } from './compte/compte.component';
 import { CompteService } from './compte.service';
+import { AfectcomptComponent } from './afectcompt/afectcompt.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +39,9 @@ import { CompteService } from './compte.service';
    
     PartenaireComponent,
    
-    CompteComponent
+    CompteComponent,
+   
+    AfectcomptComponent
   ],
   imports: [
     BrowserModule,

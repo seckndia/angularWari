@@ -12,11 +12,20 @@
           <a class="nav-link"   style="color: aliceblue" routerLink="/admin" routerLinkActive="active">Acceuil </a>
         </li>
           <li class="nav-item">
-            <a class="nav-link" style="color: aliceblue"routerLink="#" routerLinkActive="active">Affectation de Comptes</a>
+            <a class="nav-link" style="color: aliceblue"routerLink="afectcompt" routerLinkActive="active">Affectation de Comptes</a>
+
           </li>
-          <li class="nav-item">
-            <a class="nav-link" style="color: aliceblue"routerLink="listpart" routerLinkActive="active">Liste des Partenaire</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" style="color: aliceblue" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Gestion de listes
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" routerLink="listpart" routerLinkActive="active">Partenaire</a>
+              <a class="dropdown-item" href="#">UserAll</a>
+              <a class="dropdown-item" href="#">UserPartenaire</a>
+            </div>
           </li>
+ 
           <li class="nav-item">
               <a class="nav-link" style="color: aliceblue"routerLink="#" routerLinkActive="active"> Depots</a>
             </li>

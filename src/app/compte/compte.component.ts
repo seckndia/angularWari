@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CompteService } from '../compte.service';
+import { PartService} from '../part.service';
 
 @Component({
   selector: 'app-compte',
@@ -7,10 +8,24 @@ import { CompteService } from '../compte.service';
   styleUrls: ['./compte.component.scss']
 })
 export class CompteComponent implements OnInit {
-
-  constructor(private comptService: CompteService) { }
+partener = [];
+comptAll = [];
+  constructor(private comptService: CompteService, private part: PartService) { }
 
   ngOnInit() {
+    this.part.getPartenaires().subscribe(
+      res=>{
+        console.log(res);
+        this.partener=res
+    
+      }, err=>{
+        console.log(err);
+      }
+    )
+    this.part.getComptAll().subscribe(
+      res => this.comptAll = res,
+      err => console.log(err)
+    )
   }
 
   OnSubmit(partenaire){

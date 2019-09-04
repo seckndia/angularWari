@@ -26,6 +26,7 @@ import { CompteService } from './compte.service';
 import { AfectcomptComponent } from './afectcompt/afectcompt.component';
 import { ListuserallComponent } from './listuserall/listuserall.component';
 import { ListuserComponent } from './listuser/listuser.component';
+import { DepotComponent } from './depot/depot.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,7 +48,9 @@ import { ListuserComponent } from './listuser/listuser.component';
    
     ListuserallComponent,
    
-    ListuserComponent
+    ListuserComponent,
+   
+    DepotComponent
   ],
   imports: [
     BrowserModule,

@@ -6,18 +6,44 @@
     <h3 class="mb-0">Ajout Compte au Partenaire</h3>
       </div>
       <div class="card-body">
-        <form class="form" #imageForm=ngForm (ngSubmit)="OnSubmit(partenaire)" >
+        <form class="form" #imageForm=ngForm (ngSubmit)="OnSubmit(compte)" >
             <div class="row form-group">
               <div class="col ">
                   <label for="">Partenaire</label>
-                <input type="text" #partenaire class="form-control" ngModel placeholder="Id du partenaire" name="partenaire">
+                  
+                  <select class="form-control" #compte ngModel name="compte">
+                      <option *ngFor="let p of partener" value="{{p.id}}">{{p.entreprise}}</option>
+              </select>
               </div>
             </div>
               <button type="submit" class="btn btn-primary float-right" >Ajouter</button>
             
-         
             </form>
           
       </div>
     </div>
+    <h1>Listes des Comptes</h1>
+
   </div>
+  <div class="table-responsive">
+      <table class="table table-dark">
+          <caption></caption>
+        <thead>
+          <tr>
+            <th scope="col">id</th>
+            <th scope="col">Numéro de compte</th>
+            <th scope="col">Solde</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let compt of comptAll">
+                <td>{{ compt.id }}</td>
+                <td>{{compt. numcompt}}</td>
+                <td>{{compt.solde }}</td>
+               
+              </tr>
+             
+            </tbody>
+          </table>
+        </div>

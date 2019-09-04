@@ -5,6 +5,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthentificationService } from '../authentification.service';
 import { Router } from '@angular/router';
 import { JwtHelperService } from "@auth0/angular-jwt";
+import Swal from 'sweetalert2';
 interface IUser{
   username:string;
   password:string;
@@ -31,7 +32,7 @@ export class LoginComponent implements OnInit {
     private _router: Router) { }
 
   ngOnInit() {
-    
+  
   }
   loginUser(){
    console.log(this.loginUserData)
@@ -48,13 +49,18 @@ export class LoginComponent implements OnInit {
        localStorage.setItem('expiration',decodedToken.exp);
        console.log(localStorage);
        this._router.navigate(['admin']) 
+
+       Swal.fire(
+        'Authentification réussit'
+        
+       );
      }, 
      
     err => console.log(err)
    )
    }
 
-
+   
 
 
 }

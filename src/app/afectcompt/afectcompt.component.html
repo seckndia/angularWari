@@ -1,3 +1,36 @@
-<p>
-  afectcompt works!
-</p>
+<div class="row">
+    <div class="col-md-6 mx-auto">
+      <div class="card rounded-0">
+        <div class="card-header">
+  
+      <h3 class="mb-0">Affectation de  Compte aux utilisateurs</h3>
+        </div>
+        <div class="card-body">
+          <form class="form" #imageForm=ngForm (ngSubmit)="OnSubmit(user,numcompt)" >
+              <div class="row form-group">
+                <div class="col ">
+                    <label for="">Utilisateur</label>
+                    
+                    <select class="form-control" #user ngModel name="compte">
+                        <option *ngFor="let u of users" value="{{u.id}}">{{u.username}}</option>
+                </select>
+                </div>
+                
+                    <div class="col ">
+                        <label for="">Numéro de comptes</label>
+                        
+                        <select class="form-control" #numcompt ngModel name="numcompt">
+                            <option *ngFor="let p of numcompts" value="{{p.numcompt}}">{{p.numcompt}}</option>
+                    </select>
+                    </div>
+              
+        </div>
+        <button type="submit" class="btn btn-primary float-right" >Affecter</button>
+
+              </form>
+            
+        </div>
+      </div>
+   
+  
+    </div>

@@ -1,0 +1,54 @@
+
+<div class="row">
+  <div class="col-md-6 mx-auto">
+    <div class="card rounded-0">
+      <div class="card-header">
+
+    <h3 class="mb-0">Dépots</h3>
+      </div>
+      <div class="card-body">
+        <form class="form" #imageForm=ngForm (ngSubmit)="OnSubmit(montant,numcompt)" >
+            <div class="row form-group">
+              <div class="col ">
+                  <label for="">Numéro de compte</label>
+                  <input #numcompt type="number" class="form-control" ngModel placeholder="numéro de compte" name="numcompt">
+
+              </div>
+              
+            </div>
+            <div class="row form-group">
+              <div class="col ">
+                  <label for="">Montant</label>
+                  <input #montant type="number" class="form-control" ngModel placeholder="montant" name="montant">
+
+              </div>
+            </div>
+              <button type="submit" class="btn btn-primary float-right" >Effectuer</button>
+            
+            </form>
+          
+      </div>
+    </div>
+
+  </div>
+  <h1 *ngIf="infocompts">Information compt</h1>
+  <div class="table-responsive">
+    <table class="table" >
+      <caption></caption>
+      <thead class="thead-success">
+        <tr>
+       
+        </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let inf of infocompts">
+              <td>{{ inf.numcompt }}</td>
+              <td>{{inf. solde}}</td>
+              <td>{{inf.partenaire.entreprise }}</td>
+              <td>{{inf.partenaire.ninea }}</td>
+                
+            </tr>
+           
+          </tbody>
+        </table>
+      </div>

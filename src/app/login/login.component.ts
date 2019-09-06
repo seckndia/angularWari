@@ -48,7 +48,7 @@ export class LoginComponent implements OnInit {
        localStorage.setItem('roles',decodedToken.roles[0]);
        localStorage.setItem('expiration',decodedToken.exp);
        console.log(localStorage);
-       this._router.navigate(['admin']) 
+       this._router.navigate(['acceuil']) 
 
        Swal.fire(
         'Authentification réussie!!!'

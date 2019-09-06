@@ -22,5 +22,15 @@ export class ListuserallComponent implements OnInit {
   )
   
   }
+  bloquerUser(id) {
+    if (window.confirm('Are you sure, you want to delete?')){
+      this._listService.bloquerUser(id).subscribe(data => {
+        console.log(data)
+        this.ngOnInit()
+        //window.location.reload()
+      })
+    }
+  } 
+
 
 }

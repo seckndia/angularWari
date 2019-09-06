@@ -56,7 +56,9 @@ import { RetraitComponent } from './retrait/retrait.component';
    
     EnvoieComponent,
    
-    RetraitComponent
+    RetraitComponent,
+   
+    
   ],
   imports: [
     BrowserModule,

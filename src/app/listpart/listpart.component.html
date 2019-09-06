@@ -3,23 +3,30 @@
     <caption></caption>
   <thead class="thead-success">
     <tr>
-      <th scope="col">id</th>
+
       <th scope="col">Nom de l'Entreprise</th>
       <th scope="col">Adresse</th>
       <th scope="col">Tel</th>
-      <th scope="col">Status</th>
       <th scope="col">Ninea</th>
+      <th scope="col">Status</th>
+      
     </tr>
   </thead>
   <tbody>
       <tr *ngFor="let partenaire of partenaires">
-          <td>{{ partenaire.id }}</td>
+          
           <td>{{partenaire. entreprise}}</td>
           <td>{{partenaire.adresse }}</td>
           <td>{{partenaire.tel }}</td>
-          <td>{{partenaire.status }}</td>
           <td>{{partenaire.ninea }}</td>
-        
+          <td>
+       <button type="button" class="btn btn-primary" 
+        (click)="bloquerpart(partenaire.id)" 
+        [ngClass]="{'btn': true,
+        'btn-danger':partenaire.status=='bloquer'}">
+        {{partenaire.status }}</button>
+            </td>
+
         </tr>
        
       </tbody>

@@ -19,7 +19,15 @@ partenaires = []
   )
   
   }
-
+  bloquerpart(id) {
+    if (window.confirm('Are you sure, you want to delete?')){
+      this._listService.bloquerpart(id).subscribe(data => {
+        console.log(data)
+        this.ngOnInit()
+        //window.location.reload()
+      })
+    }
+  }
 
 
 }

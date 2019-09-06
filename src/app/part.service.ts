@@ -21,6 +21,7 @@ private urlComptPart:string= " http://localhost:8000/api/listcompt";
 private urlInfocompt:string= "  http://127.0.0.1:8000/api/findcompt";
 private urlenvoi:string= "  http://127.0.0.1:8000/api/envoi";
 private urlretrait:string= " http://127.0.0.1:8000/api/retrait";
+private urlbloqueruser:string= " http://127.0.0.1:8000/api/bloquer";
 
   getPartenaires() {
 return this.http.get<any>(this.urlList);
@@ -38,7 +39,16 @@ return this.http.get<any>(this.urlList);
                 return this.http.get<any>(this.urlComptPart);
                   }
 
-                  transactionRetrait(retrait){
+bloquerUser(id){
+  const bloquer= 'http://127.0.0.1:8000/api/bloquer/'+id;
+  return this.http.post(bloquer,id);
+}
+
+bloquerpart(id){
+  const bloquer= 'http://127.0.0.1:8000/api/partbloquer/'+id;
+  return this.http.get(bloquer,id);
+}
+            transactionRetrait(retrait){
                     console.log(retrait);
                     return this.http.post<any>(this.urlretrait,retrait);
                   }

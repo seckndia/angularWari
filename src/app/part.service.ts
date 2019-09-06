@@ -19,7 +19,8 @@ private urlListUer:string= " http://localhost:8000/api/listuserpart";
 private urlComptAll:string= " http://localhost:8000/api/comptAll";
 private urlComptPart:string= " http://localhost:8000/api/listcompt";
 private urlInfocompt:string= "  http://127.0.0.1:8000/api/findcompt";
-
+private urlenvoi:string= "  http://127.0.0.1:8000/api/envoi";
+private urlretrait:string= " http://127.0.0.1:8000/api/retrait";
 
   getPartenaires() {
 return this.http.get<any>(this.urlList);
@@ -37,5 +38,35 @@ return this.http.get<any>(this.urlList);
                 return this.http.get<any>(this.urlComptPart);
                   }
 
-                
-}
+                  transactionRetrait(retrait){
+                    console.log(retrait);
+                    return this.http.post<any>(this.urlretrait,retrait);
+                  }
+                 
+   envoie(
+   
+    agence:string,
+    prenomenv:string,
+    prenom:string,
+    nomenv:string,
+    nom:string,
+    telenv:string,
+    tel:string,
+    montant:string){
+          const endpoint = ' http://127.0.0.1:8000/api/envoi';
+          const formData: FormData = new FormData()
+          formData.append('Agence', agence)
+          formData.append('prenomEnvoyeur', prenomenv)
+          formData.append('prenom', prenom)
+          
+          formData.append('nomEnvoyeur', nomenv)
+          formData.append('nom', nom)
+          formData.append('telEnvoyeur', telenv)
+          formData.append('tel', tel)
+          formData.append('montant', montant)
+         
+          console.log(formData)
+          return this.http.post(endpoint, formData)
+    }            
+  }      
+

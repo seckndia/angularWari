@@ -27,6 +27,8 @@ import { AfectcomptComponent } from './afectcompt/afectcompt.component';
 import { ListuserallComponent } from './listuserall/listuserall.component';
 import { ListuserComponent } from './listuser/listuser.component';
 import { DepotComponent } from './depot/depot.component';
+import { EnvoieComponent } from './envoie/envoie.component';
+import { RetraitComponent } from './retrait/retrait.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,7 +52,11 @@ import { DepotComponent } from './depot/depot.component';
    
     ListuserComponent,
    
-    DepotComponent
+    DepotComponent,
+   
+    EnvoieComponent,
+   
+    RetraitComponent
   ],
   imports: [
     BrowserModule,

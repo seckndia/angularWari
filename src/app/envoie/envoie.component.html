@@ -1,0 +1,68 @@
+
+
+<div class="row">
+  <div class="col-md-12 mx-auto">
+    <div class="card rounded-0">
+      <div class="card-header">
+
+    <h3 class="mb-0">Envoie</h3>
+      </div>
+      <div class="card-body">
+        <form class="form" #imageForm=ngForm (ngSubmit)="OnSubmit(agence,prenomenv,prenom,nomenv,nom,telenv,tel,montant)" >
+            <div class="row form-group">
+                <div class="col ">
+                    <label for="">Agence</label>
+                  <input type="text" #agence class="form-control" ngModel placeholder="nom de l'agence" name="Agence">
+                </div>
+              </div>
+              <div class="row form-group">
+              <div class="col ">
+                  <label for="">Prénom Envoyeur</label>
+                <input type="text" #prenomenv class="form-control" ngModel placeholder="prénom envoyeur" name="prenomEnvoyeur">
+              </div>
+              <div class="col ">
+                  <label for="">Prenom Bénéficiére</label>
+                <input #prenom type="text" class="form-control" ngModel placeholder="Prénom Bénéficiére" name="prenom">
+              </div>
+            
+            </div>
+            <div class="row form-group">
+                <div class="col  ">
+                    <label for="">Nom Envoyeur</label>
+                  <input #nomenv type="text" class="form-control" ngModel placeholder="nom envoyeur" name="nomEnvoyeur">
+                </div>
+                
+                <div class="col  ">
+                    <label for="">Nom Bénéficiére</label>
+                  <input #nom type="text" class="form-control" ngModel placeholder="nom Bénéficiére" name="nom">
+                </div>
+              </div>
+
+            <div class="row form-group">
+                <div class="col ">
+                    <label for="">Tel Envoyeur </label>
+                  <input #telenv type="number" class="form-control" ngModel placeholder="numéro envoyeur" name="telEnv">
+                </div>
+                <div class="col ">
+                    <label for="">Téléphone du Bénéficiére</label>
+                  <input #tel type="number" class="form-control" ngModel placeholder="teléphone Bénéficiére" name="tel">
+                </div>
+              
+             
+              </div>
+         
+              <div class="row form-group">
+                  <div class="col  ">
+                      <label for="">Montant</label>
+                    <input #montant type="number" class="form-control" ngModel placeholder="montant" name="montant">
+                  </div>
+                </div>
+            
+
+        <button type="submit" class="btn btn-primary float-right" >Envoyer</button>
+     
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

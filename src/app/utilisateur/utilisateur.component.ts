@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UtilisateurService } from '../utilisateur.service';
   import { from } from 'rxjs';
+  import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-utilisateur',
@@ -46,10 +47,29 @@ export class UtilisateurComponent implements OnInit {
       profil.value = null;
       Image.value = null;
       this.imageUrl = "/assets/img/default.jpeg";
+      Swal.fire({
+        position: 'top-end',
+        type: 'success',
+        title: 'Utilisateur Ajouter',
+        showConfirmButton: false,
+        timer: 1500
+      })
+      
     
     },
-    error=>console.log(error)
-    );
-      }
+    error=>{
+      console.log(error)
+      Swal.fire({
+        type: 'error',
+        title: 'Oops...',
+        text: 'Parametre incorrect!',
+        footer: '<a href>Saisir les bons identifiant ?</a>'
+      })
+    }
+   )
+   }
+
+   
+
 
 }

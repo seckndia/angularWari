@@ -1,0 +1,35 @@
+
+
+
+<div class="row">
+    <div class="col-md-12 mx-auto">
+      <div class="card rounded-0">
+        <div class="card-header">
+  
+      <h3 class="mb-0">Envoie</h3>
+        </div>
+        <div class="card-body">
+          <form class="form" #retraitForm="ngForm" (ngSubmit)="OnSubmit(retraitForm.value)" >
+              <div class="row form-group">
+                  <div class="col ">
+                      <label for="">Code d'Envoie</label>
+                    <input type="text" #code class="form-control" ngModel placeholder="code d'envoie" name="codeEnvoie">
+                  </div>
+                </div>
+                <div class="row form-group">
+                <div class="col ">
+                    <label for="">Numéro de la carte d'identité</label>
+                  <input type="text" #cni class="form-control" ngModel placeholder="Numéro de la carte d'identité" name="cni">
+                </div>
+             
+  
+              </div>
+          
+           
+          <button type="submit" class="btn btn-primary float-right" >Retrait</button>
+       
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>

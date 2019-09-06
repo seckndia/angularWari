@@ -51,12 +51,20 @@ export class LoginComponent implements OnInit {
        this._router.navigate(['admin']) 
 
        Swal.fire(
-        'Authentification réussit'
+        'Authentification réussie!!!'
         
        );
      }, 
      
-    err => console.log(err)
+    err =>{
+     console.log(err)
+     Swal.fire({
+      type: 'error',
+      title: 'Oops...',
+      text: 'Parametre incorrect!',
+      footer: '<a href>Saisir les bons identifiant ?</a>'
+    })
+    }
    )
    }
 

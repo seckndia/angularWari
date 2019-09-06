@@ -13,14 +13,16 @@ import { AfectcomptComponent } from './afectcompt/afectcompt.component';
 import { ListuserallComponent } from './listuserall/listuserall.component';
 import { ListuserComponent } from './listuser/listuser.component';
 import { DepotComponent} from './depot/depot.component';
+import { EnvoieComponent } from './envoie/envoie.component';
+import { RetraitComponent } from './retrait/retrait.component';
+
 
 
 const routes: Routes = [ 
 
 { path: '', component: LoginComponent },
 
-{ path: 'admin',
-canActivate: [AuthGuard],
+{ path: 'acceuil',
  component: AdminComponent,
 
  },
@@ -33,6 +35,11 @@ canActivate: [AuthGuard],
  { path: 'listuserAll', component: ListuserallComponent  },
  { path: 'listuser', component: ListuserComponent  },
  { path: 'depot', component: DepotComponent  },
+ { path: 'envoie', component: EnvoieComponent  },
+ { path: 'retrait', component: RetraitComponent  },
+
+
+
 
 
 ];

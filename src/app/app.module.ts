@@ -30,6 +30,8 @@ import { DepotComponent } from './depot/depot.component';
 import { EnvoieComponent } from './envoie/envoie.component';
 import { RetraitComponent } from './retrait/retrait.component';
 import { PdfComponent } from './pdf/pdf.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule  } from './material/material.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -69,6 +71,8 @@ import { PdfComponent } from './pdf/pdf.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    BrowserAnimationsModule,
+    MaterialModule ,
   ],
   providers: [AuthentificationService, AuthGuard,SupAdUserService,CompteService, PartenaireService, UtilisateurService, PartService,{
     provide: HTTP_INTERCEPTORS,

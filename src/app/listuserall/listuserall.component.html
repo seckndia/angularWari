@@ -1,6 +1,6 @@
 
 
-<h1>Liste de tous les utilisateurs</h1>
+<!-- <h1>Liste de tous les utilisateurs</h1>
 <div class="table-responsive-lg">
   
   <table class="table " id="butt">
@@ -37,4 +37,57 @@
          
         </tbody>
       </table>
-    </div>
+    </div> -->
+    <h1>Liste de tous les utilisateurs</h1>
+
+    <mat-form-field>
+  <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+</mat-form-field>
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+  <!-- Position Column -->
+  <ng-container matColumnDef="username">
+    <th mat-header-cell *matHeaderCellDef> Prénom </th>
+    <td mat-cell *matCellDef="let element"> {{element.username}} </td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="nom">
+    <th mat-header-cell *matHeaderCellDef> Nom </th>
+    <td mat-cell *matCellDef="let element"> {{element.nom}} </td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="roles">
+    <th mat-header-cell *matHeaderCellDef> Roles </th>
+    <td mat-cell *matCellDef="let element"> {{element.roles[0]}} </td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="cni">
+    <th mat-header-cell *matHeaderCellDef> CNI </th>
+    <td mat-cell *matCellDef="let element"> {{element.cni}} </td>
+  </ng-container>
+  <ng-container matColumnDef="tel">
+      <th mat-header-cell *matHeaderCellDef> Tel </th>
+      <td mat-cell *matCellDef="let element"> {{element.tel}} </td>
+    </ng-container>
+    <ng-container matColumnDef="adresse">
+        <th mat-header-cell *matHeaderCellDef> Adresse </th>
+        <td mat-cell *matCellDef="let element"> {{element.adresse}} </td>
+      </ng-container>
+      <ng-container matColumnDef="status">
+          <th mat-header-cell *matHeaderCellDef> Status </th>
+          <td mat-cell *matCellDef="let element">
+          
+             <button type="button" class="btn btn-primary"  (click)="bloquerUser(element.id)" [ngClass]="{'btn': true,'btn-danger':element.status=='bloquer'}"> 
+               {{element.status}} </button>
+             </td>
+        </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+<mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+

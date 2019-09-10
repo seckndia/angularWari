@@ -25,7 +25,8 @@ export class EnvoieComponent implements OnInit {
     .subscribe(
     data =>{
       console.log(data);
-      
+      console.log(data['message']);
+      {
       agence.value =null;
       prenomenv.value =null;
       prenom.value =null;
@@ -39,10 +40,11 @@ export class EnvoieComponent implements OnInit {
         position: 'top-end',
         type: 'success',
         title: 'Envoi réussie!!!',
-        showConfirmButton: false,
-        timer: 1500
+        text: data['message'],
+        showConfirmButton: true,
+        //timer: 10000
       })
-      
+    }
     
     },
 

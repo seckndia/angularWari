@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { CompteService } from '../compte.service';
 import { PartService} from '../part.service';
+import Swal from 'sweetalert2'
+
+
 
 @Component({
   selector: 'app-compte',
@@ -23,7 +26,8 @@ comptAll = [];
       }
     )
     this.part.getComptAll().subscribe(
-      res => this.comptAll = res,
+      res => {this.comptAll = res
+                this.ngOnInit()},
       err => console.log(err)
     )
   }
@@ -33,6 +37,13 @@ comptAll = [];
       partenaire.value).subscribe(
     data =>{
       console.log(data);
+      Swal.fire({
+        position: 'top-end',
+        type: 'success',
+        title: 'Compte Ajouter',
+        showConfirmButton: false,
+        timer: 1500
+      })
       
       partenaire.value = null;
    

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SupAdUserService } from '../sup-ad-user.service';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-super-admin-user',
@@ -48,9 +49,22 @@ data =>{
   profil.value = null;
   Image.value = null;
   this.imageUrl = "/assets/img/default.jpeg";
+  Swal.fire(
+    'Good job!',
+    'Utilisateur ajouter avec succés !',
+    'success'
+  )
 
 },
-error=>console.log(error)
+error=>{
+  console.log(error)
+  Swal.fire({
+    type: 'error',
+    title: 'Oops...',
+    text: 'Paramettre inconrect',
+    footer: '<a href>Veillez revoir les données saisis!?</a>'
+  })
+}
 );
   }
 

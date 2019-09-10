@@ -18,26 +18,29 @@ retraitData = {};
     this.partService.transactionRetrait(data)
     .subscribe(
     data =>{
-      console.log(data);
-     
+      if (data.Messages) {
+        Swal.fire({
+          type: 'error',
+          title: 'Oops...',
+          text: 'Parametre incorrect!',
+          footer: '<a href>code Retirer ou code invalide ?</a>'
+        })
+      } 
+     else{
       Swal.fire({
         position: 'top-end',
         type: 'success',
-        title: 'Envoi réussie!!!',
+        title: 'Retrait réussie!!!',
         showConfirmButton: false,
         timer: 1500
       })
+    }
       
     },
 
     error=>{
-      console.log(error)
-      Swal.fire({
-        type: 'error',
-        title: 'Oops...',
-        text: 'Parametre incorrect!',
-        footer: '<a href>Saisir les bons identifiant ?</a>'
-      })
+   //   console.log(error)
+
     }
    )
    }

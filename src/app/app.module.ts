@@ -29,6 +29,7 @@ import { ListuserComponent } from './listuser/listuser.component';
 import { DepotComponent } from './depot/depot.component';
 import { EnvoieComponent } from './envoie/envoie.component';
 import { RetraitComponent } from './retrait/retrait.component';
+import { PdfComponent } from './pdf/pdf.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,6 +58,8 @@ import { RetraitComponent } from './retrait/retrait.component';
     EnvoieComponent,
    
     RetraitComponent,
+   
+    PdfComponent,
    
     
   ],

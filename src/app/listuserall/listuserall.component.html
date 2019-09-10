@@ -3,7 +3,7 @@
 <h1>Liste de tous les utilisateurs</h1>
 <div class="table-responsive-lg">
   
-  <table class="table ">
+  <table class="table " id="butt">
       <caption></caption>
     <thead>
       <tr>
@@ -30,7 +30,7 @@
             <td>
           <button type="button" class="btn btn-primary"  (click)="bloquerUser(user.id)" [ngClass]="{'btn': true,'btn-danger':user.status=='bloquer'}">{{user.status }}</button>
 
-             </td>
+          </td>
            
           
           </tr>

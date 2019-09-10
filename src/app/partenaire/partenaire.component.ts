@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PartenaireService} from '../partenaire.service';
+import Swal from 'sweetalert2'
+import jsPDF from 'jspdf';
 
 @Component({
   selector: 'app-partenaire',
@@ -21,6 +23,17 @@ export class PartenaireComponent implements OnInit {
       this.imageUrl = event.target.result;
     } 
     reader.readAsDataURL(this.fileToUpload);
+      }
+      downloadPDF(){
+        console.log('downloading pdf ...');
+         
+    const doc =new jsPDF();
+     
+    doc.text('    CONTRAT DE PARTENARIAT', 15, 15,
+    );
+    
+    doc.save('contrat.pdf')
+     
       }
       
       OnSubmit(username,password,entreprise,nom,adresse,adresses,tel,tels,cni,profil,ninea,Image){
@@ -51,6 +64,11 @@ export class PartenaireComponent implements OnInit {
       profil.value = null;
       Image.value = null;
       this.imageUrl = "/assets/img/default.jpeg";
+      Swal.fire(
+        'Good job!',
+        'Partenaire ajouter avec succés !',
+        'success'
+      )
     
     },
     error=>console.log(error)

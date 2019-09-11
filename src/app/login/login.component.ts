@@ -33,7 +33,10 @@ export class LoginComponent implements OnInit {
     private _router: Router) { }
 
   ngOnInit() {
-  
+    if(localStorage.getItem("token")){
+      localStorage.clear();
+      window.location.reload();
+    }
   }
   loginUser(){
   // console.log(this.loginUserData)
@@ -52,18 +55,26 @@ export class LoginComponent implements OnInit {
        localStorage.setItem('roles',decodedToken.roles[0]);
        localStorage.setItem('expiration',decodedToken.exp);
        console.log(localStorage);
-
+      //this._auth.saveToken(res.token);
        this._router.navigate(['acceuil']) 
 
        Swal.fire(
-        'Authentification réussie!!!'
+        'Bienvenue chez DijaService!!!'
         
+       ).
+       then(
+         ()=>{
+           window.location.reload();
+           //this.ngOnInit();
+         }
        );
      },
 
    err =>{
+     console.log(this.loginUserData);
+     
      console.log(err)
-    console.log(err['message'])
+  
      Swal.fire({
       type: 'error',
       title: 'Oops...',

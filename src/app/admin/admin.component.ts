@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthentificationService } from '../authentification.service';
+import { NavComponent } from '../nav/nav.component';
 
 @Component({
   selector: 'app-admin',
@@ -9,10 +10,9 @@ import { AuthentificationService } from '../authentification.service';
 export class AdminComponent implements OnInit {
   users: Object;
 
-  constructor(private data: AuthentificationService) { }
+  constructor(private data: AuthentificationService,private navComponent:NavComponent) { }
 
   ngOnInit() {
-   
   }
  
 }

@@ -7,41 +7,41 @@
    </button>
         
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav " id="left">
+      <ul class="navbar-nav " id="left"  *ngIf="isAthenticated()">
           <li class="nav-item">
           <a class="nav-link"   style="color: aliceblue" routerLink="acceuil" routerLinkActive="active">Acceuil </a>
         </li>
-          <li class="nav-item">
+          <li class="nav-item" *ngIf="isAdmin()">
             <a class="nav-link" style="color: aliceblue"routerLink="afectcompt" routerLinkActive="active">Affectation de Comptes</a>
 
           </li>
-          <li class="nav-item dropdown">
+          <li class="nav-item dropdown" *ngIf="isSuperAdmin() ||isAdmin() ">
             <a class="nav-link dropdown-toggle" style="color: aliceblue" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Gestion de listes
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" routerLink="listpart" routerLinkActive="active">Partenaire</a>
-              <a class="dropdown-item" routerLink="listuserAll"  routerLinkActive="active">UserAll</a>
-              <a class="dropdown-item" routerLink="listuser" routerLinkActive="active">UserPartenaire</a>
+              <a class="dropdown-item" routerLink="listpart" routerLinkActive="active" *ngIf="isSuperAdmin()">Partenaire</a>
+              <a class="dropdown-item" routerLink="listuserAll"  routerLinkActive="active" *ngIf="isSuperAdmin()">UserAll</a>
+              <a class="dropdown-item" routerLink="listuser" routerLinkActive="active" *ngIf="isSuperAdmin() || isAdmin()">UserPartenaire</a>
             </div>
           </li>
  
-          <li class="nav-item">
+          <li class="nav-item" *ngIf="isCaissier()">
               <a class="nav-link" style="color: aliceblue"routerLink="depot" routerLinkActive="active"> Depots</a>
             </li>
-            <li class="nav-item dropdown">
+            <li class="nav-item dropdown" *ngIf="isSuperAdmin() ||isAdmin() ">
               <a class="nav-link dropdown-toggle" style="color: aliceblue" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Gestion d'Ajouts
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" routerLink="register">SuperAdmin et User</a>
-                <a class="dropdown-item" routerLink="partenaire"  routerLinkActive="active">Partenaire</a>
+                <a class="dropdown-item" routerLink="register" *ngIf="isSuperAdmin()">SuperAdmin et User</a>
+                <a class="dropdown-item" routerLink="partenaire"  routerLinkActive="active" *ngIf="isSuperAdmin()">Partenaire</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" routerLink="users" >Utilisateur</a>
-                <a class="dropdown-item" routerLink="compte" routerLinkActive="active">Comptes</a>
+                <a class="dropdown-item" routerLink="users" *ngIf="isAdmin()" >Utilisateur</a>
+                <a class="dropdown-item" routerLink="compte" routerLinkActive="active" *ngIf="isSuperAdmin()">Comptes</a>
               </div>
             </li>
-            <li class="nav-item dropdown">
+            <li class="nav-item dropdown"*ngIf="isAdmin() ||isUser() ">
               <a class="nav-link dropdown-toggle" style="color: aliceblue" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Transactions
               </a>

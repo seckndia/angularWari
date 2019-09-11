@@ -74,7 +74,7 @@ import { MaterialModule  } from './material/material.module';
     BrowserAnimationsModule,
     MaterialModule ,
   ],
-  providers: [AuthentificationService, AuthGuard,SupAdUserService,CompteService, PartenaireService, UtilisateurService, PartService,{
+  providers: [AuthentificationService,NavComponent, AuthGuard,SupAdUserService,CompteService, PartenaireService, UtilisateurService, PartService,{
     provide: HTTP_INTERCEPTORS,
     useClass: TokenInterceptorService,
     multi: true

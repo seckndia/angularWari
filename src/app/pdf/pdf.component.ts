@@ -11,6 +11,10 @@ export class PdfComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    setTimeout(()=>{
+      window.print();
+    },1000);
+    
   }
   downloadPDF(){
     console.log('downloading pdf ...');

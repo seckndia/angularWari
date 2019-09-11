@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PartenaireService} from '../partenaire.service';
 import Swal from 'sweetalert2'
 import jsPDF from 'jspdf';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-partenaire',
@@ -11,7 +12,7 @@ import jsPDF from 'jspdf';
 export class PartenaireComponent implements OnInit {
   imageUrl:string = "/assets/img/default.jpeg" ;
   fileToUpload : File = null;
-  constructor(private partService: PartenaireService) { } 
+  constructor(private partService: PartenaireService,private router:Router) { } 
 
   ngOnInit() {
   }
@@ -25,14 +26,15 @@ export class PartenaireComponent implements OnInit {
     reader.readAsDataURL(this.fileToUpload);
       }
       downloadPDF(){
-        console.log('downloading pdf ...');
+        /* console.log('downloading pdf ...');
          
     const doc =new jsPDF();
      
     doc.text('    CONTRAT DE PARTENARIAT', 15, 15,
     );
     
-    doc.save('contrat.pdf')
+    doc.save('contrat.pdf') */
+        this.router.navigate(["/pdf"])
      
       }
       

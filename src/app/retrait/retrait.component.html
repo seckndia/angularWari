@@ -1,7 +1,42 @@
 
 
 
+
+
+
 <div class="row">
+  <div class="col-md-6 mx-auto">
+    <div class="card rounded-0">
+    
+      <div class="card-body">
+        <form class="form" #codeForm="ngForm" (ngSubmit)="OneSubmit(codeForm.value)" >
+            <div class="row form-group">
+                <div class="col ">
+                    <label for="">Code d'Envoie</label>
+                  <input type="text" #code class="form-control" ngModel placeholder="code d'envoie" name="codeEnvoie">
+                </div>
+              </div>
+            
+        
+         
+        <button type="submit" class="btn btn-primary float-right" >Rechercher</button>
+
+       
+
+     
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<div style="display: none"  id="affichage">
+<p>Nom:{{codeenvoie.retrait.nom }}</p>
+<p>prenom:{{codeenvoie.retrait.prenom }}</p>
+<p>Montant:{{codeenvoie.montant }}</p>
+</div>
+
+
+<div class="row" style="display: none"  id="affichage1" >
     <div class="col-md-12 mx-auto">
       <div class="card rounded-0">
         <div class="card-header">

@@ -22,6 +22,7 @@ private urlInfocompt:string= "  http://127.0.0.1:8000/api/findcompt";
 private urlenvoi:string= "  http://127.0.0.1:8000/api/envoi";
 private urlretrait:string= " http://127.0.0.1:8000/api/retrait";
 private urlbloqueruser:string= " http://127.0.0.1:8000/api/bloquer";
+private urlfindcode:string= " http://localhost:8000/api/findcode";
 
   getPartenaires() {
 return this.http.get<any>(this.urlList);
@@ -52,6 +53,10 @@ bloquerpart(id){
                     console.log(retrait);
                     return this.http.post<any>(this.urlretrait,retrait);
                   }
+      codeRetrait(code){
+        console.log(code);
+        return this.http.post<any>(this.urlfindcode,code);
+      }
                  
    envoie(
    

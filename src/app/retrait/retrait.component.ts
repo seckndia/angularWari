@@ -9,6 +9,7 @@ import Swal from 'sweetalert2';
 })
 export class RetraitComponent implements OnInit {
 retraitData = {};
+codeenvoie = {};
   constructor(private partService: PartService) { }
 
   ngOnInit() {
@@ -43,5 +44,25 @@ retraitData = {};
 
     }
    )
+   }
+   
+   OneSubmit(code){
+    console.log(code)
+    this.partService.codeRetrait(code)
+    .subscribe(
+     
+      res=>{
+console.log(res);
+this.codeenvoie=res;
+console.log(this.codeenvoie);
+document.getElementById('affichage').style.display="block";
+document.getElementById('affichage1').style.display="block";
+
+
+      },
+      err=>{
+console.log(err);
+      }
+    )
    }
 }
